@@ -2,8 +2,8 @@
   "loadLocales": true,
   "realms": {
     "default": {
-      "appTitle": "Custom Project",
-      "styles": ":host > * {--or-app-color2: #F9F9F9; --or-app-color3: #22211f; --or-app-color4: #0c4da2; --or-app-color5: #CCCCCC;}",
+      "appTitle": "Octanis Portal",
+      "styles": ":host > * {--or-app-color2: #fff; --or-app-color3: #0a0a0a; --or-app-color4: #444; --or-app-color5: #CCCCCC; --internal-or-asset-tree-text-color: #000 !important;}",
       "logo": "/images/logo.png",
       "logoMobile": "/images/logo-mobile.png",
       "favicon": "/images/favicon.ico",
