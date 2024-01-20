@@ -102,7 +102,7 @@ services:
     volumes:
       - manager-data:/storage
       - deployment-data:/deployment
-      - /deployment.local:/deployment.local
+      - deployment.local:/deployment.local
       # Map data should be accessed from a volume mount
       # 1). Host filesystem - /deployment.local:/deployment.local
       # 2) NFS/EFS network mount - efs-data:/efs
