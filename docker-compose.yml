@@ -24,7 +24,7 @@
 #  docker volume rm portal_deployment-data
 #  Do the following volume rm command if you want a clean install (wipe all existing data)
 #  docker volume rm portal_postgresql-data
-#  DEPLOYMENT_VERSION=$(git rev-parse --short HEAD) OR_ADMIN_PASSWORD=secret OR_HOSTNAME=my.domain.com docker-compose -p portal up -d
+#  DEPLOYMENT_VERSION=$(git rev-parse --short HEAD) OR_ADMIN_PASSWORD=secret OR_HOSTNAME=portal.octanis.ch docker-compose -p portal up -d
 #
 # All data is kept in volumes. Create a backup of the volumes to preserve data.
 #
@@ -122,4 +122,4 @@ services:
       OR_ADDITIONAL_HOSTNAMES: ${OR_ADDITIONAL_HOSTNAMES:-}
       OR_SSL_PORT: ${OR_SSL_PORT:--1}
       OR_DEV_MODE: ${OR_DEV_MODE:-false}
-      #OR_MAP_TILES_PATH: '/map/mapdata.mbtiles' /deployment.local/mapdata/mapdata.mbtiles is default if volume is /deployment.local:/deployment.local
+      OR_MAP_TILES_PATH: '/deployment.local/mapdata/mapdata.mbtiles'
