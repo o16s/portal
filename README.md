@@ -33,3 +33,16 @@ keycloak/themes/octanis
 to make new themes, copy the octanis folder and rename it to your theme name, then change the theme name in keycloak/themes/theme.properties
 
 applicationName can be set in login/messages/messages_en.properties
+
+
+
+### maptiles
+
+on lasso:
+wget https://download.geofabrik.de/europe-latest.osm.pbf
+
+git clone https://github.com/systemed/tilemaker.git
+cd tilemaker
+docker build -t tilemaker .
+
+docker run --rm -it -v $(pwd):/srv tilemaker --input=/srv/europe-latest.osm.pbf --output=/srv/europe-latest.mbtiles
