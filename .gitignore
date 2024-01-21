@@ -8,6 +8,7 @@ bin-release/
 [Tt]mp/
 
 # Other files and folders
+.env
 .settings/
 .gradle/
 .vagrant/
