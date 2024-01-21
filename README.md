@@ -46,3 +46,7 @@ cd tilemaker
 docker build -t tilemaker .
 
 docker run --rm -it -v $(pwd):/srv tilemaker --input=/srv/europe-latest.osm.pbf --output=/srv/europe-latest.mbtiles
+
+
+## default CA certificate
+https://raw.githubusercontent.com/openremote/proxy/main/certs/01-selfsigned
