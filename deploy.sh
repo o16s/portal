@@ -34,15 +34,15 @@ DEPLOYMENT_VERSION=$(git rev-parse --short HEAD)
 MANAGER_VERSION=$(cd openremote; git rev-parse --short HEAD; cd ..)
 
 # Build docker images
-docker build -t openremote/manager:$MANAGER_VERSION ./openremote/manager/build/install/manager/
-docker build -t openremote/portal-deployment:$DEPLOYMENT_VERSION ./deployment/build/
+docker build --no-cache -t openremote/manager:$MANAGER_VERSION ./openremote/manager/build/install/manager/
+docker build --no-cache -t openremote/portal-deployment:$DEPLOYMENT_VERSION ./deployment/build/
 
 
 # Shutdown existing services
-DEPLOYMENT_VERSION=$(git rev-parse --short HEAD) OR_ADMIN_PASSWORD=$secret OR_HOSTNAME=$OR_HOSTNAME docker-compose -p $PROJECT_NAME down
+MANAGER_VERSION=$MANAGER_VERSION DEPLOYMENT_VERSION=$DEPLOYMENT_VERSION OR_ADMIN_PASSWORD=$secret OR_HOSTNAME=$OR_HOSTNAME docker-compose -p $PROJECT_NAME down
 
 # Remove the existing data volume
 docker volume rm portal_deployment-data
 
 # Start services with the new configuration
-DEPLOYMENT_VERSION=$(git rev-parse --short HEAD) OR_ADMIN_PASSWORD=$secret OR_HOSTNAME=$OR_HOSTNAME docker-compose -p $PROJECT_NAME up -d
+MANAGER_VERSION=$MANAGER_VERSION DEPLOYMENT_VERSION=$DEPLOYMENT_VERSION OR_ADMIN_PASSWORD=$secret OR_HOSTNAME=$OR_HOSTNAME docker-compose -p $PROJECT_NAME up --build -d
