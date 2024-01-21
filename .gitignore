@@ -49,6 +49,7 @@ local.properties
 *.apk
 *.dab
 *.sh
+!deploy.sh
 *.iml
 *.ipr
 *.iws
