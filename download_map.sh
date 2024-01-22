@@ -20,8 +20,31 @@ set -e
 # Change directory to the parent directory
 cd ..
 
-# Clone the repository
-git clone https://github.com/openmaptiles/openmaptiles.git
+# Check if the openmaptiles directory already exists
+if [ -d "openmaptiles" ]; then
+    echo "The 'openmaptiles' directory already exists."
+    echo "Do you want to remove the existing directory and clone a fresh one? [y/N]"
+    read -r clone_confirmation
+    if [[ $clone_confirmation =~ ^[Yy]$ ]]; then
+        # Remove the existing directory and clone afresh
+        rm -rf openmaptiles
+        git clone https://github.com/openmaptiles/openmaptiles.git
+    else
+        echo "Do you want to pull the latest changes in the existing 'openmaptiles' directory? [y/N]"
+        read -r pull_confirmation
+        if [[ $pull_confirmation =~ ^[Yy]$ ]]; then
+            # Pull the latest changes
+            cd openmaptiles
+            git pull
+        else
+            echo "Script aborted by the user."
+            exit 1
+        fi
+    fi
+else
+    # Clone the repository if the directory doesn't exist
+    git clone https://github.com/openmaptiles/openmaptiles.git
+fi
 
 # Navigate to the cloned directory
 cd openmaptiles
