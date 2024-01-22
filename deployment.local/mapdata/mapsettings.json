@@ -2,10 +2,19 @@
   "options": {
     "default": {
       "center": [8.2275,46.8182],
-      "zoom": 15,
+      "zoom": 9,
       "minZoom" : 0,
-      "maxZoom" : 19,
-      "boxZoom": false
+      "maxZoom" : 12,
+      "boxZoom": false,
+      "bounds": [4.47544,44.52046,17.79095,55.22396]
+    },
+    "octanis": {
+      "center": [8.2275,46.8182],
+      "zoom": 9,
+      "minZoom" : 0,
+      "maxZoom" : 12,
+      "boxZoom": false,
+      "bounds": [4.47544,44.52046,17.79095,55.22396]
     }
   },
   "version": 8,
