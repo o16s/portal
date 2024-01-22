@@ -46,9 +46,6 @@ else
     git clone https://github.com/openmaptiles/openmaptiles.git
 fi
 
-# Navigate to the cloned directory
-cd openmaptiles
-
 # Edit the .env file
 sed -i "s/MAX_ZOOM=.*/MAX_ZOOM=$MAX_ZOOM/" .env
 sed -i "s/MIN_ZOOM=.*/MIN_ZOOM=$MIN_ZOOM/" .env
