@@ -50,6 +50,7 @@ local.properties
 *.dab
 *.sh
 !deploy.sh
+!download_map.sh
 *.iml
 *.ipr
 *.iws
