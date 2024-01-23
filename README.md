@@ -50,3 +50,16 @@ docker run --rm -it -v $(pwd):/srv tilemaker --input=/srv/europe-latest.osm.pbf 
 
 ## default CA certificate
 https://raw.githubusercontent.com/openremote/proxy/main/certs/01-selfsigned
+
+
+## map
+
+use download_map.sh
+
+hint: https://github.com/openmaptiles/openmaptiles/issues/231
+
+
+add to docker compose postgres:
+shm_size: '2gb'
+
+https://github.com/Overv/openstreetmap-tile-server/issues/22

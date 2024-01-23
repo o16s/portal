@@ -6,6 +6,8 @@ if [ "$#" -ne 3 ]; then
     exit 1
 fi
 
+echo "If this script doesn't work, try setting shm_size in ../openmaptiles/docker-compose.yml"
+
 # Assign arguments to variables
 MAX_ZOOM=$1
 MIN_ZOOM=$2
