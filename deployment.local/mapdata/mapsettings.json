@@ -1,9 +1,16 @@
 {
   "options": {
     "default": {
-      "center": [8.2275,46.8182],
-      "zoom": 9,
-      "minZoom" : 8,
+      "center": [8.55, 47.36667],
+      "zoom": 12,
+      "minZoom" : 0,
+      "maxZoom" : 20,
+      "boxZoom": false
+    },
+    "demo-makatcandy": {
+      "center": [7.651489056153098, 50.56422788094966],
+      "zoom": 12,
+      "minZoom" : 0,
       "maxZoom" : 20,
       "boxZoom": false
     }
